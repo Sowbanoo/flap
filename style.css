@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the game horizontally */
+    background-color: black; /* Set the background color to black */
+}
+
+.game-container {
+    position: relative;
+    border: 10px solid black; /* Add a black border around the game */
+    margin: 20px; /* Add margin to create space for the border */
+}
+
+canvas {
+    display: block;
+    background: #70c5ce;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    color: white; /* Change the score color to white */
+}
+
