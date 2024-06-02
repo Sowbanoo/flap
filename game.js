@@ -105,8 +105,6 @@ function sendScoreToBot(score) {
 }
 
 
-
-
 function update() {
     if (gameOver) {
         ctx.fillStyle = 'black';
@@ -134,9 +132,46 @@ function update() {
     requestAnimationFrame(update);
 }
 
+// document.addEventListener('keydown', (e) => {
+//     if (e.code === 'Space') {
+//         bird.velocity = bird.lift;
+//     }
+// });
+let isJumping = false
 document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
+    if (e.code === 'Space' && !isJumping) { // Check if bird is not currently jumping
         bird.velocity = bird.lift;
+        isJumping = true; // Set isJumping to true to prevent multiple jumps
+    }
+});
+document.addEventListener('keyup', (e) => {
+    if (e.code === 'Space') {
+        isJumping = false; // Reset isJumping to false when space key is released
+    }
+});
+document.addEventListener('mousedown', () => {// was click 
+    if (!isJumping) { // Check if bird is not currently jumping
+        bird.velocity = bird.lift;
+        isJumping = true; // Set isJumping to true to prevent multiple jumps
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    isJumping = false; // Reset isJumping to false when mouse click is released
+});
+
+document.addEventListener('touchstart', () => {
+    if (!isJumping) { // Check if bird is not currently jumping
+        bird.velocity = bird.lift;
+        isJumping = true; // Set isJumping to true to prevent multiple jumps
+    }
+});
+document.addEventListener('touchend', () => {
+    isJumping = false; // Reset isJumping to false when touch ends
+});
+document.addEventListener('click', () => {
+    if (gameOver) {
+        window.location.reload(); // Reload the page
     }
 });
 
