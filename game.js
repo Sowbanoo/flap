@@ -14,7 +14,16 @@ const bird = {
     height: 20,
     gravity: 0.4,
     lift: -7,
-    velocity: 0
+    velocity: 0,
+};
+const birdadnroid = {
+    x: 50,
+    y: 150,
+    width: 30,
+    height: 20,
+    gravity: 0.4,
+    lift: -3,
+    velocity: 0,
 };
 
 const pipes = [];
@@ -162,7 +171,7 @@ document.addEventListener('mouseup', () => {
 
 document.addEventListener('touchstart', () => {
     if (!isJumping) { // Check if bird is not currently jumping
-        bird.velocity = bird.lift;
+        bird.velocity = birdadnroid.lift;
         isJumping = true; // Set isJumping to true to prevent multiple jumps
     }
 });
