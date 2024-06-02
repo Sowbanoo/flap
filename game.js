@@ -22,7 +22,7 @@ const birdadnroid = {
     width: 30,
     height: 20,
     gravity: 0.4,
-    lift: -3,
+    lift: -1,
     velocity: 0,
 };
 
